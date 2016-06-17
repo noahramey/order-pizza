@@ -7,22 +7,21 @@ function Pizza(name, size){
 }
 
 Pizza.prototype.getPriceForSize = function() {
-  if (this.size === "Small") {
+  if (this.size === "small") {
     this.price += 8;
-  } else if (this.size === "Medium") {
+  } else if (this.size === "medium") {
     this.price += 9.75;
   } else {
     this.price += 11.50;
   }
+  });
 }
 
-Pizza.prototype.getPriceForToppings = function() {
-  if (this)
+var toppingsPrice = function(pizza) {
+  pizza.toppings.forEach(function(topping) {
+    pizza.price += 2;
+  });
 }
-
-
-
-
 
 
 // USER INTERFACE LOGIC //
@@ -51,19 +50,24 @@ $(function() {
     event.preventDefault();
 
     var nameInput = $("#name").val();
-    var sizeInput = $("#size").val();
+    var sizeInput = $("#size").val().toLowerCase();
     var newPizza = new Pizza(nameInput, sizeInput);
-
-    newPizza.getPriceForSize();
 
     $(".new-topping").each(function() {
       var toppingInput = $(this).find("#new-toppings").val();
       newPizza.toppings.push(toppingInput);
     });
 
+    newPizza.getPriceForSize();
+    toppingsPrice(newPizza);
+
     $("#pizza-options").hide();
+
+    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your <span class='toppings'></span> delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?");
+
     $(".total-price").fadeIn();
 
-    console.log(newPizza);
+    
+
   });
 });

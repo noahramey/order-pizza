@@ -11,11 +11,11 @@
   <body>
     <div class="jumbotron">
       <div class="container">
-        <h1>Order Your Pizza Here!</h1>
+        <h1 class="text-center">Order Your Pizza Here!</h1>
       </div>
     </div>
-    <div class="jumbotron">
-      <div class="container">
+    <div class="container">
+      <div class="jumbotron">
         <div class="pizza-form">
           <form id="pizza-options">
             <h2>Customize your pizza!</h2>
@@ -57,8 +57,26 @@
           </form>
         </div>
         <div class="total-price">
-          <h2>Your total comes to $<span class="price"></span>. Would you like to add delivery?</h2>
+          <div class="total-price-text">
+          </div>
           <button type="button" class="btn btn-md btn-danger" id="add-delivery">Add Delivery</button>
+          <button type="button" class="btn btn-md btn-danger" id="finish-order">No Thanks</button>
+        </div>
+        <div class="address-form">
+          <form id="address">
+            <div class="form-group">
+              
+            </div>
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+
+            </div>
+          </form>
+        </div>
+        <div class="order-finish">
+          <h2>Thank you for ordering!</h2>
         </div>
       </div>
     </div>
