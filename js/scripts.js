@@ -2,12 +2,17 @@
 // BUSINESS LOGIC //
 //===============//
 
-//Pizza Object and Price Prototypes
 function Pizza(name, size){
   this.name = name;
   this.size = size;
   this.toppings = [];
   this.price = 0;
+}
+
+function Address(street, city, state){
+  this.street = street;
+  this.city = city;
+  this.state = state;
 }
 
 Pizza.prototype.getPriceForSize = function() {
@@ -31,17 +36,10 @@ Pizza.prototype.listToppings = function() {
   if (array.length === 1){
     return array[0];
   } else if (array.length === 2) {
-  return array[0] + " and " + array[1];
+    return array[0] + " and " + array[1];
   } else {
-  return array.slice(0, -1).join(", ") + " and " + array[array.length - 1];
+    return array.slice(0, -1).join(", ") + " and " + array[array.length - 1];
   }
-}
-
-// Address Object and Sentence Prototype
-function Address(street, city, state){
-  this.street = street;
-  this.city = city;
-  this.state = state;
 }
 
 Address.prototype.sentence = function(){
