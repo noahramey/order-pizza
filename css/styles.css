@@ -1,3 +1,18 @@
-.total-price {
+.total-price, .address-form, .order-finish {
   display: none;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+}
+
+.sizes h4, .toppings-menu h4, h6 {
+  text-decoration: underline;
+}
+
+.sizes p, .toppings-menu p {
+  text-align: center;
+  font-size: 1em;
+  line-height: 10px;
 }

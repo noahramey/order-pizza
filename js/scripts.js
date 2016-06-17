@@ -14,13 +14,22 @@ Pizza.prototype.getPriceForSize = function() {
   } else {
     this.price += 11.50;
   }
-  });
 }
 
 var toppingsPrice = function(pizza) {
   pizza.toppings.forEach(function(topping) {
     pizza.price += 2;
   });
+}
+
+function Address(street, city, state){
+  this.street = street;
+  this.city = city;
+  this.state = state;
+}
+
+Address.prototype.sentence = function(){
+  return this.street + ", " + this.city + ", " + this.state;
 }
 
 
@@ -67,7 +76,9 @@ $(function() {
 
     $(".total-price").fadeIn();
 
-    
+    $("#add-delivery").click(function() {
+      $(".address-form").show();
+    });
 
   });
 });
