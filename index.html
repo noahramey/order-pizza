@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Order Pizza</title>
   </head>
-  <body>
+  <body class="container">
     <div class="jumbotron">
       <div class="container">
-        <h1 class="text-center">Order Your Pizza Here!</h1>
+        <h1 class="text-center"><span class="red-text">Noah's</span> Pizza</h1>
       </div>
     </div>
-    <div class="container">
+    <div class="row">
+    <div class="container col-sm-4">
       <div class="jumbotron">
         <h2 class="text-center">Menu</h2>
-        <h4 class="text-center">Scroll Down to Order</h4>
         <hr>
         <div class="sizes">
           <h4 class="text-center">Pizza</h4>
             <p><strong>Small</strong></p>
-            <p>$8.00</p>
+            <p><span class="red-text">$8.00</span></p>
             <p><strong>Medium</strong></p>
-            <p>$9.75</p>
+            <p><span class="red-text">$9.75</span></p>
             <p><strong>Large</strong></p>
-            <p>$11.50</p>
+            <p><span class="red-text">$11.50</span></p>
           </ul>
         </div>
         <div class="toppings-menu">
@@ -46,19 +46,19 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container col-sm-8">
       <div class="jumbotron">
         <div class="pizza-form">
           <form id="pizza-options">
-            <h2>Customize your pizza!</h2>
+            <h2>Customize your <span class="red-text">Pizza</span></h2>
             <div class="form-group">
-              <label for="name">What's your name?</label>
+              <label for="name">What's your <span class="red-text">name</span>?</label>
               <input type="text" class="form-control" id="name">
             </div>
             <div class="all-toppings">
               <div class="form-group">
                 <div class="new-topping">
-                  <label for="new-toppings">What kind of toppings would you like?</label>
+                  <label for="new-toppings">What kind of <span class="red-text">toppings</span> would you like?</label>
                   <select class="form-control" id="new-toppings">
                     <option>Pepperoni</option>
                     <option>Mushrooms</option>
@@ -75,7 +75,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="size">What size would you like?</label>
+              <label for="size">What <span class="red-text">size</span> would you like?</label>
               <select class="form-control" id="size">
                 <option>Small</option>
                 <option>Medium</option>
@@ -101,7 +101,7 @@
         <div class="container">
           <div class="jumbotron address-form">
             <form id="address">
-              <h2>Enter your Address</h2>
+              <h2>Enter your <span class="red-text">Address</span></h2>
               <div class="form-group">
                 <label for="street">Street:</label>
                 <input type="text" class="form-control" id="street">
@@ -173,7 +173,7 @@
           </div>
         </div>
         <div class="order-finish">
-          <h2>Thank you for ordering!</h2>
+          <h2>Thank you for <span class="red-text">Ordering</span></h2>
         </div>
       </div>
     </div>

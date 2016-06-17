@@ -4,8 +4,14 @@ h1, h2 {
 
 body {
   font-family: 'Oswald', sans-serif;
+  background-image: url("../img/pizza.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.red-text, h6 {
+  color: #d9534f;
+}
 
 .total-price, .order-finish, .address-form, .final-order {
   display: none;
@@ -15,7 +21,7 @@ label {
   font-weight: normal;
 }
 
-.sizes h4, .toppings-menu h4, h6 {
+.sizes h4, .toppings-menu h4 {
   text-decoration: underline;
 }
 

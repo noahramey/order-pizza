@@ -2,7 +2,7 @@
 // BUSINESS LOGIC //
 //===============//
 
-//Pizza Object and Price Prototype
+//Pizza Object and Price Prototypes
 function Pizza(name, size){
   this.name = name;
   this.size = size;
@@ -45,7 +45,7 @@ $(function() {
   $("#add-topping").click(function() {
     $(".all-toppings").append('<div class="form-group">' +
                                 '<div class="new-topping">' +
-                                  '<label for="new-toppings">What other toppings would you like?</label>' +
+                                  '<label for="new-toppings">What other <span class="red-text">toppings</span> would you like?</label>' +
                                     '<select class="form-control" id="new-toppings">' +
                                       '<option>Pepperoni</option>' +
                                       '<option>Mushrooms</option>' +
@@ -78,7 +78,7 @@ $(function() {
     newPizza.toppingPrice(newPizza);
 
     $("#pizza-options").hide();
-    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?</h3>");
+    $(".total-price-text").append("<h3>Hi <span class='red-text'>" + newPizza.name + "</span>, your delicious looking <span class='red-text'>" + newPizza.size + "</span>-sized pizza will come to a total of <span class='red-text'>$" + newPizza.price + "</span>. Would you like to have it delivered?</h3>");
     $(".total-price").fadeIn();
 
     $("#add-delivery").click(function() {
@@ -102,7 +102,7 @@ $(function() {
       var newAddress = new Address(street, city, state);
 
       $(".address-form").hide();
-      $(".order-finish").append("<p>Thank you " + newPizza.name + ". Your " + newPizza.size + " pizza will be delivered to " + newAddress.sentence() + ". Please have your payment of $" + newPizza.price + " ready.</p>");
+      $(".order-finish").append("<p>Thank you " + newPizza.name + ". Your " + newPizza.size + " pizza will be delivered to " + newAddress.sentence() + ". Please have your payment of <span class='red-text'>$" + newPizza.price + "</span> ready.</p>");
       $(".order-finish").fadeIn();
     });
   });
