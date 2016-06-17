@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <title>Order Pizza</title>
@@ -14,7 +15,6 @@
         <h1 class="text-center">Order Your Pizza Here!</h1>
       </div>
     </div>
-
     <div class="container">
       <div class="jumbotron">
         <h2 class="text-center">Menu</h2>
@@ -33,16 +33,16 @@
         <div class="toppings-menu">
           <h4 class="text-center">Toppings</h4>
           <h6 class="text-center">$2.00</h6>
-            <p>Pepperoni</p>
-            <p>Mushrooms</p>
-            <p>Onions</p>
-            <p>Sausage</p>
-            <p>Bacon</p>
-            <p>Extra Cheese</p>
-            <p>Black Olives</p>
-            <p>Green Peppers</p>
-            <p>Pineapple</p>
-            <p>Ham</p>
+          <p>Pepperoni</p>
+          <p>Mushrooms</p>
+          <p>Onions</p>
+          <p>Sausage</p>
+          <p>Bacon</p>
+          <p>Extra Cheese</p>
+          <p>Black Olives</p>
+          <p>Green Peppers</p>
+          <p>Pineapple</p>
+          <p>Ham</p>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
             <h2>Customize your pizza!</h2>
             <div class="form-group">
               <label for="name">What's your name?</label>
-              <input type="text" id="name">
+              <input type="text" class="form-control" id="name">
             </div>
             <div class="all-toppings">
               <div class="form-group">
@@ -83,16 +83,20 @@
               </select>
             </div>
             <div class="form-group">
-              <button type="button" id="add-topping" class="btn btn-lg btn-danger">Add Topping</button>
-              <button type="submit" id="submit" class="btn btn-lg btn-warning">Get Total</button>
+              <button type="button" id="add-topping" class="btn btn-md btn-danger">Add Topping</button>
+              <button type="submit" id="submit" class="btn btn-md btn-warning">Get Total</button>
             </div>
           </form>
         </div>
         <div class="total-price">
           <div class="total-price-text">
           </div>
-          <button type="button" class="btn btn-md btn-danger" id="add-delivery">Add Delivery</button>
-          <button type="button" class="btn btn-md btn-danger" id="finish-order">No Thanks</button>
+          <div class="final-text">
+          </div>
+          <div class="form-group last-buttons">
+            <button type="button" class="btn btn-md btn-danger" id="add-delivery">Add Delivery</button>
+            <button type="button" class="btn btn-md btn-warning" id="finish-order">No Thanks</button>
+          </div>
         </div>
         <div class="container">
           <div class="jumbotron address-form">
@@ -163,7 +167,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <button type="submit" id="submit-address" class="btn btn-lg btn-primary">Save Address</button>
+                <button type="submit" id="submit-address" class="btn btn-lg btn-warning">Save Address</button>
               </div>
             </form>
           </div>

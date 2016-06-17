@@ -1,4 +1,8 @@
+//===============//
 // BUSINESS LOGIC //
+//===============//
+
+//Pizza Object and Price Prototype
 function Pizza(name, size){
   this.name = name;
   this.size = size;
@@ -16,12 +20,13 @@ Pizza.prototype.getPriceForSize = function() {
   }
 }
 
-var toppingsPrice = function(pizza) {
-  pizza.toppings.forEach(function(topping) {
-    pizza.price += 2;
+Pizza.prototype.toppingPrice = function(newPizza) {
+  newPizza.toppings.forEach(function(topping) {
+    newPizza.price += 2;
   });
 }
 
+// Address Object and Sentence Prototype
 function Address(street, city, state){
   this.street = street;
   this.city = city;
@@ -32,8 +37,10 @@ Address.prototype.sentence = function(){
   return this.street + ", " + this.city + ", " + this.state;
 }
 
-
+//========================//
 // USER INTERFACE LOGIC //
+//========================//
+
 $(function() {
   $("#add-topping").click(function() {
     $(".all-toppings").append('<div class="form-group">' +
@@ -68,32 +75,35 @@ $(function() {
     });
 
     newPizza.getPriceForSize();
-    toppingsPrice(newPizza);
+    newPizza.toppingPrice(newPizza);
 
     $("#pizza-options").hide();
-    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?");
+    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?</h3>");
     $(".total-price").fadeIn();
 
-  $("#add-delivery").click(function() {
-    $(".total-price").hide();
-    $(".address-form").fadeIn();
-  });
+    $("#add-delivery").click(function() {
+      $(".total-price").hide();
+      $(".address-form").fadeIn();
+    });
 
-  $("#address").submit(function(event) {
-    event.preventDefault();
+    $("#finish-order").click(function() {
+      $(".total-price-text").hide();
+      $(".last-buttons").hide();
+      $(".final-text").append("<h3>Your " + newPizza.size + " pizza will be ready for pickup in 30 minutes. Please have $" + newPizza.price + " ready for payment.");
+    });
 
-    var street = $("#street").val();
-    var city = $("#city").val();
-    var state = $("#state").val();
+    $("#address").submit(function(event) {
+      event.preventDefault();
 
-    var newAddress = new Address(street, city, state);
+      var street = $("#street").val();
+      var city = $("#city").val();
+      var state = $("#state").val();
 
-    $(".address-form").hide();
-    $(".order-finish").append("<p>Thank you " + newPizza.name + ". Your " + newPizza.size + " pizza will be delivered to " + newAddress.sentence() + ". Please have your payment ready.</p>");
-    $(".order-finish").fadeIn();
+      var newAddress = new Address(street, city, state);
 
-  })
-
-
+      $(".address-form").hide();
+      $(".order-finish").append("<p>Thank you " + newPizza.name + ". Your " + newPizza.size + " pizza will be delivered to " + newAddress.sentence() + ". Please have your payment of $" + newPizza.price + " ready.</p>");
+      $(".order-finish").fadeIn();
+    });
   });
 });

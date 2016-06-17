@@ -1,10 +1,18 @@
-.total-price, .order-finish, .address-form {
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.total-price, .order-finish, .address-form, .final-order {
   display: none;
 }
 
-li {
-  list-style: none;
-  text-align: center;
+label {
+  font-weight: normal;
 }
 
 .sizes h4, .toppings-menu h4, h6 {
