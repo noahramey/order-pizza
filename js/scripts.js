@@ -71,14 +71,29 @@ $(function() {
     toppingsPrice(newPizza);
 
     $("#pizza-options").hide();
-
-    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your <span class='toppings'></span> delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?");
-
+    $(".total-price-text").append("<h3>Hi " + newPizza.name + ", your delicious looking " + newPizza.size + " pizza will come to a total of <strong>$" + newPizza.price + "</strong>. Would you like to have it delivered?");
     $(".total-price").fadeIn();
 
-    $("#add-delivery").click(function() {
-      $(".address-form").show();
-    });
+  $("#add-delivery").click(function() {
+    $(".total-price").hide();
+    $(".address-form").fadeIn();
+  });
+
+  $("#address").submit(function(event) {
+    event.preventDefault();
+
+    var street = $("#street").val();
+    var city = $("#city").val();
+    var state = $("#state").val();
+
+    var newAddress = new Address(street, city, state);
+
+    $(".address-form").hide();
+    $(".order-finish").append("<p>Thank you " + newPizza.name + ". Your " + newPizza.size + " pizza will be delivered to " + newAddress.sentence() + ". Please have your payment ready.</p>");
+    $(".order-finish").fadeIn();
+
+  })
+
 
   });
 });
